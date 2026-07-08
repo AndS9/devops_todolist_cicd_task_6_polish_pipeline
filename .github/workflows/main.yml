@@ -33,7 +33,7 @@ jobs:
       - id: set
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo 'matrix={"python-version":["${{ github.event.inputs.python-version }}"],"OsType":["${{ github.event.inputs.OsType }}"]}' >> $GITHUB_OUTPUT
+            echo 'matrix={"python-version":["${{ github.event.inputs.python-version }}"],"OsType":["${{ github.event.inputs.OsType }}-latest"]}' >> $GITHUB_OUTPUT
           else
             echo 'matrix={"python-version":["3.8","3.9"],"OsType":["ubuntu-latest","windows-latest"]}' >> $GITHUB_OUTPUT
           fi
